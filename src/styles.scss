@@ -1,1 +1,24 @@
+@import 'lightgallery/scss/lightgallery';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7); /* Sombra oscura */
+    overflow: hidden;
+    position: relative;
+    background-color: #333;
+    //cursor:none;
+    color:white;
+}
+
+@font-face {
+    font-family: 'Plante';
+    src: url('../public/fonts/Plante.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
