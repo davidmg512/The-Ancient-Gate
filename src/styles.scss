@@ -1,4 +1,4 @@
-@import 'lightgallery/scss/lightgallery';
+@import '@angular/cdk/overlay-prebuilt.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,13 +7,18 @@
 body {
     margin: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7); /* Sombra oscura */
-    overflow: hidden;
+    overflow-y: scroll;
     position: relative;
     background-color: #333;
     //cursor:none;
     color:white;
+    cursor:url('../public/Middle\ Ages--cursor--SweezyCursors.cur'), auto;
+}
+
+a, button {
+    cursor: url('../public/Middle\ Ages--pointer--SweezyCursors.cur'), pointer;
 }
 
 @font-face {
@@ -22,3 +27,25 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+
+.zigzag-line {
+    position: fixed;
+    top: 0;
+    left: 30px;
+    width: 130px; /* Ancho del zigzag */
+    height: 100vh;
+  }
+
+  .zigzag-line-right{
+    position: fixed;
+    top: 0;
+    right: 30px;
+    width: 130px; /* Ancho del zigzag */
+    height: 100vh;
+  }
+
+  /* Dibujar el SVG de zigzag en la línea */
+  .zigzag-line svg .zigzag-line-right svg {
+    width: 100%;
+    height: 100%;
+  }

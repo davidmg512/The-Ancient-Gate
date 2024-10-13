@@ -1,7 +1,59 @@
+<div class="zigzag-line -z-10 md:z-5">
+  <svg viewBox="-22 0 100 2000" preserveAspectRatio="none">
+    <!-- Dibujar un zigzag con curvas suaves usando path -->
+    <path d="
+      M 10 0
+      Q 60 80, 10 160
+      T 10 320
+      T 10 480
+      T 10 640
+      T 10 800
+      T 10 960
+      T 10 1120
+      T 10 1280
+      T 10 1440
+      T 10 1600
+      T 10 1760
+      T 10 1920
+      T 10 2000
+    " 
+    stroke="red" 
+    stroke-width="12" 
+    fill="none" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" />
+  </svg>
+</div>
+<div class="zigzag-line-right -z-10 md:z-5">
+  <svg viewBox="22 0 100 2000" preserveAspectRatio="none">
+    <!-- Dibujar un zigzag invertido -->
+    <path d="
+      M 90 0
+      Q 40 80, 90 160
+      T 90 320
+      T 90 480
+      T 90 640
+      T 90 800
+      T 90 960
+      T 90 1120
+      T 90 1280
+      T 90 1440
+      T 90 1600
+      T 90 1760
+      T 90 1920
+      T 90 2000
+    " 
+    stroke="red" 
+    stroke-width="12" 
+    fill="none" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" />
+  </svg>
+</div>
 <div class="illuminated-item">
 
   <header class="text-center p-0">
-    <h1 class="mt-12 text-8xl text-white" style="font-family: Plante;">
+    <h1 class="mt-12 text-7xl md:text-8xl text-white" style="font-family: Plante;">
         <span class="text-secondary z-50 relative">T</span>HE 
         <span class="text-secondary z-50 relative">A</span>NCIENT 
         <span class="text-secondary z-50 relative">G</span>ATE
@@ -9,28 +61,16 @@
   </header>
   
 
-  <app-scrollbar></app-scrollbar>
+  <app-scrollbar class="hidden md:block"></app-scrollbar>
 
-  <div class="p-20" id="descarga">
-    
-    <button>Descargar</button>
-    
-  </div>
+  <app-descarga id="descarga"></app-descarga>
 
   <div class="p-20" id="descripcion">
     <!-- Contenido de Descripción -->
   </div>
 
-  <div class="p-20" id="imagenes">
-    <lightgallery>
-      <a href="/images/mapa1.png">
-          <img alt="img1" src="/images/thumb1.png" />
-      </a>
-      <a href="/images/mapa2.png">
-          <img alt="img2" src="/images/thumb2.png" />
-      </a>
-    </lightgallery>
-  </div>
+  
+  <app-imagenes id="galeria"></app-imagenes>
 
   <div class="p-20" id="videos">
     <!-- Contenido de Videos -->
@@ -44,11 +84,4 @@
       </filter>
     </defs>
   </svg>
-  
-  
-  
-    
-  
-  
-
 </div>

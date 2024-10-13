@@ -1,0 +1,23 @@
+<div class="text-center">
+  <span class="text-4xl text-white z-50 relative">Galería</span>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-11 mx-8 md:mx-auto mt-10 max-w-5xl ">
+    @for (imagen of imagenes; track imagen.id) {
+      <div class="hover:z-50 flex relative justify-center items-center group">
+        <img class="rounded-lg transform transition duration-300 group-hover:scale-110 max-w-full h-auto" src="{{imagen.thumb}}">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+          class="size-6 absolute top-0
+            right-0 mt-2 mr-1 opacity-0
+            group-hover:opacity-100 
+            transition-opacity duration-300
+            hover:scale-125 transition-transform">
+  
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+        </svg>
+      </div>
+    }
+  </div>
+</div>
+
+
+
+
