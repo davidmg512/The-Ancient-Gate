@@ -23,5 +23,20 @@ export const imagenes = [
         id: 5,
         src: "/images/mapa5.png",
         thumb: "/images/thumb5.png"
+    },
+    {
+        id: 6,
+        src: "/images/dialogoNPC.png",
+        thumb: "/images/thumb6.png"
+    },
+    {
+        id: 7,
+        src: "/images/HUDbasico.png",
+        thumb: "/images/thumb7.png"
+    },
+    {
+        id: 8,
+        src: "/images/MenuPrincipalJuego.png",
+        thumb: "/images/thumb8.png"
     }
 ]

@@ -3,11 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { ScrollbarComponent } from "./scrollbar/scrollbar.component";
 import { ImagenesComponent } from "./imagenes/imagenes.component";
 import { DescargaComponent } from "./descarga/descarga.component";
+import { VideosComponent } from "./videos/videos.component";
+import { InformacionComponent } from "./informacion/informacion.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ScrollbarComponent, ImagenesComponent, DescargaComponent],
+  imports: [RouterOutlet, ScrollbarComponent, ImagenesComponent, DescargaComponent, VideosComponent, InformacionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

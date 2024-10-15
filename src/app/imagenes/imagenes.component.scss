@@ -1,0 +1,63 @@
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  /* Mostrar el lightbox cuando esté abierto */
+  .lightbox.open {
+    display: block;
+  }
+  
+
+  @media (max-width: 756px) {
+      .lightbox.open {
+        display: flex;
+      }
+  }
+  
+  /* Estilo del botón de cerrar */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  /* Botones de navegación */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.3s;
+    user-select: none;
+    transform: translateY(-50%);
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  /* Cambiar el color de los botones al pasar el ratón */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }

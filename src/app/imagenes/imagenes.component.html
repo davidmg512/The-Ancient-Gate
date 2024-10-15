@@ -1,8 +1,9 @@
 <div class="text-center">
-  <span class="text-4xl text-white z-50 relative">Galería</span>
+  <span class="text-4xl text-white z-50 relative">
+    <span class="text-secondary">G</span>alería</span>
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-11 mx-8 md:mx-auto mt-10 max-w-5xl ">
     @for (imagen of imagenes; track imagen.id) {
-      <div class="hover:z-50 flex relative justify-center items-center group">
+      <div (click)="openLightbox(imagen.id)" class="pointer-cursor z-50 md:z-0 md:hover:z-50 flex relative justify-center items-center group">
         <img class="rounded-lg transform transition duration-300 group-hover:scale-110 max-w-full h-auto" src="{{imagen.thumb}}">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
           class="size-6 absolute top-0
@@ -15,6 +16,28 @@
         </svg>
       </div>
     }
+  </div>
+
+  <div *ngIf="isLightboxOpen" class="lightbox md:pt-16" [class.open]="isLightboxOpen" (click)="closeLightbox()">
+    <span class="close" (click)="closeLightbox()">&times;</span>
+    <img class="m-auto block w-full md:max-w-5xl" [src]="currentImage?.src" alt="imagen ampliada">
+    <a class="prev " (click)="prevImage($event)">&#10094;</a>
+    <a class="next " (click)="nextImage($event)">&#10095;</a>
+
+    <div class="flex flex-row absolute bottom-0 justify-center items-center w-full  mt-6 mb-4 overflow-x-auto" #thumbnailContainer>
+      <div class="flex flex-nowrap gap-2">
+        @for(imagen of imagenes; track imagen.id){
+          <img (click)="openLightbox(imagen.id); $event.stopPropagation()" 
+          class="pointer-cursor rounded-lg" 
+          src="{{imagen.thumb}}" 
+          [ngClass]="{
+             'w-44 object-cover border-2 border-solid border-white': imagen.id === currentImage.id,
+             'w-36 object-cover': imagen.id !== currentImage.id 
+          }">        
+        }
+      </div>
+    </div>
+    
   </div>
 </div>
 
