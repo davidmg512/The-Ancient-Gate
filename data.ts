@@ -40,3 +40,39 @@ export const imagenes = [
         thumb: "/images/thumb8.png"
     }
 ]
+
+export const socialDavid = [
+    {
+        id: 1,
+        logo: "/icons/github.svg",
+        src: "https://github.com/davidmg512",
+    },
+    {
+        id: 2,
+        logo: "/icons/linkedin.svg",
+        src: "https://www.linkedin.com/in/david-m%C3%A9ndez-garcia-7b7522211/",
+    },
+    {
+        id: 3,
+        logo: "/icons/gmail.svg",
+        src: "mailto:davidmgaspe@gmail.com"
+    }
+];
+
+export const socialJesus = [
+    {
+        id: 1,
+        logo: "/icons/github.svg",
+        src: "https://github.com/jlg90/GenerativeGameTFM",
+    },
+    {
+        id: 2,
+        logo: "/icons/linkedin.svg",
+        src: "http://www.linkedin.com/in/jesús-lópez-galbis-9366a6330",
+    },
+    {
+        id: 3,
+        logo: "/icons/gmail.svg",
+        src: "mailto:susojeruso2000@gmail.com"
+    }
+];

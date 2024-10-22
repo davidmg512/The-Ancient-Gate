@@ -1,63 +1,181 @@
-<div class="z-50 relative grid sm:grid-cols-12 gap-4 sm:mx-36">
+<div class="z-50 relative grid grid-cols-1 sm:grid-cols-12 gap-4 sm:mx-36">
 
-    <div class="min-h-24 sm:col-span-4 rounded-lg">
+    <div class="min-h-24 col-span-1 sm:col-span-4 rounded-lg">
         
-        <h1 class="text-center text-2xl mb-4">Creadores</h1>
+        <h1 class="text-center text-2xl mb-6">Creadores</h1>
         
-        <div class="grid grid-cols-2">
-            <div class="m-4 border-solid border-2 border-white rounded-full overflow-hidden">
+        <div class="grid grid-cols-2 sm:grid-cols-2">
+            <div>
+              <div class="flex space-x-2 items-center justify-center">
+                @for (item of socialDavid; track item.id) {
+                  <div class="rounded-full border-2 border-white h-11 w-11 flex items-center justify-center hover:bg-secondary transition duration-200 hover:-translate-y-2">
+                    <a href="{{item.src}}" target="_blank" rel="noopener noreferrer">
+                      <img src="{{item.logo}}" class="h-9 w-9" alt="Social icon" />
+                    </a>
+                  </div>
+                } @empty {
+                    <p>No hay redes sociales disponibles.</p>
+                }
+              </div>
+              <div class="m-4 border-solid border-2 border-white rounded-full overflow-hidden hover:scale-110 transition duration-200">
                 <img class="object-cover" src="/images/fotoDavid.png">
+              </div>
             </div>
-            <div class="m-4 border-solid border-2 border-white rounded-full overflow-hidden">
-                <img class="object-cover mt-1.5" src="/images/fotoJesus.png">
+            <div>
+              <div class="flex space-x-2 items-center justify-center">
+                @for (item of socialDavid; track item.id) {
+                  <div class="rounded-full border-2 border-white h-11 w-11 flex items-center justify-center hover:bg-secondary transition duration-200 hover:-translate-y-2">
+                    <a href="{{item.src}}" target="_blank" rel="noopener noreferrer">
+                      <img src="{{item.logo}}" class="h-9 w-9" alt="Social icon" />
+                    </a>
+                  </div>
+                    
+                } @empty {
+                    <p>No hay redes sociales disponibles.</p>
+                }
+              </div>
+              <div class="m-4 border-solid border-2 border-white rounded-full overflow-hidden hover:scale-110 transition duration-200">
+                <img class="object-cover mt-1.5" src="/images/jesus.png">
+              </div>
             </div>
+            
         </div>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 sm:grid-cols-2">
             <span class="mx-6 text-center">David Méndez García</span>
-            <span class="mx-6 text-center">Jesús Lopez Galbis</span>
+            <span class="mx-6 text-center">Jesús López Galbis</span>
         </div>
 
-        <h1 class="text-center text-2xl mt-6">Premisa</h1>
+        <h1 class="text-center text-2xl mt-6">Premisa y contenido</h1>
         <div class="mx-8 mt-3 sm:m-4">
-            Un texto es una composición de signos codificados en un sistema de escritura que forma una unidad de sentido. 
-            También es una composición de caracteres imprimibles (con grafema) generados por un algoritmo de cifrado que, 
-            aunque no tienen sentido para cualquier persona, sí puede ser descifrado por su destinatario original. 
-            En otras palabras, un texto es un entramado de signos con una intención comunicativa que adquiere sentido en determinado contexto.
+          <p>
+          Nos encontramos ante un mundo devastado y en ruinas, completamente invadido por seres carentes de humanidad y hostiles, donde nuestro protagonista ya ha
+           explorado el mundo prácticamente en su totalidad con el objetivo de encontrar vida humana
+           en este mundo hostil, hasta que descubre la existencia de una puerta misteriosa que lleva a
+           unas antiguas ruinas donde cabe la posibilidad de que los últimos resquicios de la humanidad
+           se hayan refugiado. Por lo tanto, nuestro objetivo como jugador es superar un mapa lleno de
+           enemigos y situaciones adversas enfrentándonos a ellos en combate y desarrollando nuestras
+           habilidades para alcanzar dicha puerta.</p><br>
+
+          <p>
+           El juego cuenta tanto con un sistema de progresión que nos permitirá subir de nivel las distintas clases, junto con las
+           estadísticas, así como ir desbloqueando las habilidades de dichas clases. Además, contaremos con varias habilidades especiales
+           desbloqueables mediante objetos del mapa.</p><br>
+
+           <p>
+           Por otro lado, tendremos varias misiones proporcionadas por un NPC que nos encontraremos varias veces a lo largo del juego.
+           Además, contaremos con un sistema de guardado, tanto manual como automático, persistente entre sesiones que impedirá que perdamos nuestro progreso.
+          </p>
         </div>
     </div>
 
     <div class="border-l-2 hidden sm:block w-1 border-gray-400 h-auto"></div>
 
-    <div class="min-h-24 sm:col-span-7 rounded-lg">
+    <div class="min-h-24 col-span-1 sm:col-span-7 rounded-lg">
 
         <h1 class="text-center text-2xl">Clases</h1>
-        <div class="grid grid-cols-3">
-              <div class="w-52 h-72 m-4">
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+
+              <div class="relative h-48 sm:w-52 sm:h-72 m-4 hover:scale-110 transition duration-200">
                 <img class="w-full h-full object-contain" src="/images/pergamino.png">
+                <div class="absolute inset-0 flex flex-col items-center z-10 top-10 sm:top-18">
+                  <div class="flex items-center">
+                      <img src="/icons/sword.svg" class="h-5 w-5 sm:h-8 sm:w-8" alt="sword icon">
+                      <p class="text-black text-base sm:text-lg font-bold mx-1 sm:mx-2">Guerrero</p>
+                      <img src="/icons/sword.svg" class="h-5 w-5 sm:h-8 sm:w-8" alt="sword icon">
+                  </div>
+                  <!-- Saltos de línea entre elementos -->
+                  <span class="text-black">+ vida</span>
+                  <span class="text-black">+ defensa</span>
+                  <p class="text-center text-xs sm:text-sm px-6 sm:px-8 sm:ml-2 sm:mt-3 text-black">Tanque con stuns y regeneración de vida.</p>
+                </div>
+                
               </div>
-              <div class="w-52 h-72 m-4">
+              
+              <div class="relative h-48 sm:w-52 sm:h-72 m-4 hover:scale-110 transition duration-200">
                 <img class="w-full h-full object-contain" src="/images/pergamino.png">
+                <div class="absolute inset-0 flex flex-col items-center z-10 top-10 sm:top-18">
+                  <div class="flex items-center">
+                      <img src="/icons/wizard.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="sword icon">
+                      <p class="text-black text-base sm:text-lg font-bold mx-1 sm:mx-2">Mago</p>
+                      <img src="/icons/wizard.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="sword icon">
+                  </div>
+                  <!-- Saltos de línea entre elementos -->
+                  <span class="text-black mt-2">+ energía</span>
+                  <p class="text-center text-xs sm:text-sm px-8 sm:ml-2 mt-1 sm:mt-6 text-black">Stuns, robo de vida, ataques en area, etc.</p>
+                </div>
+                
               </div>
-              <div class="w-52 h-72 m-4">
+
+              <div class="relative h-48 sm:w-52 sm:h-72 m-4 col-span-2 sm:col-span-1 hover:scale-110 transition duration-200">
                 <img class="w-full h-full object-contain" src="/images/pergamino.png">
+                <div class="absolute inset-0 flex flex-col items-center z-10 top-10 sm:top-18">
+                  <div class="flex items-center">
+                      <img src="/icons/dagger2.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="dagger icon">
+                      <p class="text-black text-base sm:text-lg font-bold mx-1 sm:mx-2">Asesino</p>
+                      <img src="/icons/dagger2.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="dagger icon">
+                  </div>
+                  <!-- Saltos de línea entre elementos -->
+                  <span class="text-black">+ crítico</span>
+                  <span class="text-black">+ velocidad</span>
+                  <p class="text-center text-xs sm:text-sm px-32 sm:px-8 sm:ml-2 sm:mt-3 text-black">Habilidades con sangrado y veneno.</p>
+                </div>
+                
               </div>
         </div>
 
-        <h1 class="text-center text-2xl">Objetos</h1>
-        <div class="grid grid-cols-4 gap-4">
-            <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden">
-              <img class="w-full h-full object-contain" src="/images/bomba(1).png">
-            </div>
-            <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden">
-              <img class="w-full h-full object-contain" src="/images/vida(1).png">
-            </div>
-            <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden">
-              <img class="w-full h-full object-contain" src="/images/energia(1).png">
-            </div>
-            <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden">
-              <img class="w-full h-full object-contain" src="/images/venda(1).png">
-            </div>
+        <h1 class="text-center text-2xl mt-4">Objetos</h1>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
+          <div class="flex flex-col items-center justify-center">
+              <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden flex items-center justify-center">
+                  <img class="object-contain w-full h-full" src="/images/bomba(1).png">
+              </div>
+              <p>Bomba</p>
           </div>
-          
+          <div class="flex flex-col items-center justify-center">
+              <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden flex items-center justify-center">
+                  <img class="object-contain w-full h-full" src="/images/vida(1).png">
+              </div>
+              <p>Poción de vida</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+              <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden flex items-center justify-center">
+                  <img class="object-contain w-full h-full" src="/images/energia(1).png">
+              </div>
+              <p>Poción de energía</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+              <div class="w-32 h-32 m-4 border-solid border-2 border-white rounded-full overflow-hidden flex items-center justify-center">
+                  <img class="object-contain w-full h-full" src="/images/venda(1).png">
+              </div>
+              <p>Vendas</p>
+          </div>
+      </div>
+
+      <h1 class="text-center text-2xl relative top-8 sm:top-14">Enemigos</h1>
+      <div class="relative w-full scale-110">
+          <img src="/images/enemigos.png" class="w-full h-96 sm:h-auto">
+          <div class="absolute inset-0 flex flex-col items-center z-10 top-28 sm:top-32 2xl:top-52">
+              <!-- Primer enemigo -->
+              <div class="flex flex-col items-center text-center mb-3 sm:mb-4">
+                  <div class="flex items-center justify-center">
+                      <img src="/icons/goblin.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="goblin icon">
+                      <p class="text-black text-base sm:text-lg font-bold mx-1 sm:mx-2">Goblins</p>
+                      <img src="/icons/goblin.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="goblin icon">
+                  </div>
+                  <p class="text-black text-xs sm:text-base px-18 sm:px-28 2xl:px-40 mt-2">Uno de los monstruos que ha invadido el mundo, acechan en cada esquina y campan a sus anchas. Suelen ir en grupos.</p>
+              </div>
+              <!-- Segundo enemigo -->
+              <div class="flex flex-col items-center text-center mb-4">
+                  <div class="flex items-center justify-center">
+                      <img src="/icons/warrior.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="warrior icon">
+                      <p class="text-black text-base sm:text-lg font-bold mx-1 sm:mx-2">Caballeros</p>
+                      <img src="/icons/warrior.svg" class="h-5 w-5 sm:h-7 sm:w-7" alt="warrior icon">
+                  </div>
+                  <p class="text-black text-xs sm:text-base px-18 sm:px-28 2xl:px-40 mt-2">Anteriormente los ultimos defensores de la humanidad, los pocos que quedan han enloquecido y atacan a cualquiera que se acerque.</p>
+              </div>
+          </div>
+      </div>
+
+
     </div>
 </div>
